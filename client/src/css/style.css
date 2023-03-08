@@ -1,28 +1,33 @@
 /* app shell CSS */
 :root {
-  --primary: #31a9e1;
+  --magenta: #d58fdb;
   --gray: #ececec;
   --whitesmoke: #f5f5f5;
   --dark: #222;
-  --monoaki: #272822;
+  --deepindigo: #25252f;
+  --darkgrey: #1e1e25;
+  --commentgrey: #545964;
+  --highlightgrey: #33353f;
   --navbar-height: 50px;
 }
 
 body {
   margin: 0;
-  background-color: var(--monoaki);
+  background-color: var(--deepindigo);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 20px;
+  cursor: default;
+  font-weight: 500;
 }
 
 #navbar {
   height: var(--navbar-height);
-  background-color: var(--primary);
+  background-color: var(--magenta);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -30,7 +35,9 @@ h1 {
   color: white;
   font-size: 22px;
   font-weight: 550;
-  letter-spacing: 0.9px;
+  letter-spacing: 1.5px;
+  font-family: system-ui, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-weight: 400 !important;
 }
 
 .navbar-brand img {
@@ -44,7 +51,7 @@ h1 {
   animation-timing-function: linear;
   height: 30px;
   width: 30px;
-  border: 3px solid var(--primary);
+  border: 3px solid var(--magenta);
   border-right-color: transparent;
   border-radius: 50%;
 }
@@ -64,6 +71,19 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.CodeMirror-wrap {
+  height: 100% !important;
+}
+
+.cm-s-monokai,
+.CodeMirror-linenumber {
+  background: var(--deepindigo) !important;
+}
+
+.cm-comment {
+  color: var(--commentgrey) !important;
 }
 
 .app-update {
@@ -90,13 +110,13 @@ h1 {
   border-radius: 0.3rem;
   border: 1px solid transparent;
   outline: none;
-  color: #1a1a1a;
-  background-color: #aeaeae;
+  color: #fff;
+  background-color: var(var(--deepindigo));
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #cecece;
+  background-color: var(--darkgrey);
   cursor: pointer;
 }
 
@@ -118,15 +138,6 @@ h1 {
   width: 100%;
   display: block;
   text-align: center;
-}
-
-.btn.btn-primary {
-  background-color: #2d3e50;
-  color: #d9e9e8;
-}
-
-.btn.btn-primary:hover {
-  background-color: #57779a;
 }
 
 .btn.btn-danger {
@@ -157,12 +168,13 @@ h1 {
 }
 
 .btn.btn-dark {
-  background-color: #1a1a1a;
+  background-color: var(--deepindigo);
   color: #d9e9e8;
 }
 
 .btn.btn-dark:hover {
-  background-color: #5f5f5f;
+  background-color: var(--darkgrey);
+  font-weight: 500 !important;
 }
 
 .btn.btn-white {
@@ -190,6 +202,14 @@ h1 {
 
 .btn.btn-link:hover {
   background-color: #31a9e1;
+}
+
+.CodeMirror-selected {
+  background-color: var(--highlightgrey) !important;
+}
+
+.CodeMirror-selected .cm-comment {
+  color: var(--darkgrey) !important;
 }
 
 @media only screen and (max-width: 600px) {
